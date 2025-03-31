@@ -73,6 +73,7 @@
           display: flex;
           flex-direction: column;
           font-family: sans-serif;
+          color: black;
       }
 
       /* Área de conversación */
@@ -129,9 +130,10 @@
 
       /* Mensajes del usuario alineados a la derecha */
       .user-message {
-          background-color: #ffc9c9;
+          background-color: #701317;
           text-align: right;
           align-self: flex-end;
+          color: black;
       }
 
       /* Mensajes del servidor alineados a la izquierda con color grisáceo */
