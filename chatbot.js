@@ -307,6 +307,7 @@
         },
         body: JSON.stringify({ option: option }),
         mode: "cors",
+        credentials: "include"
     })
     .then(response => response.json())
     .then(data => {
