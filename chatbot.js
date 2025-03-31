@@ -85,6 +85,7 @@
       #chat-header {
           display: flex;
           justify-content: space-between;
+          background-color: #701317;
           padding-bottom: 10px;
       }
 
