@@ -45,25 +45,6 @@
           font-size: 20px;
       }
 
-      /* Estilo del interior del ícono */
-      #chat-icon-inner {
-          width: 20px;
-          height: 20px;
-          background-color: white;
-          border-radius: 50%;
-          position: relative;
-      }
-      #chat-icon-inner:after {
-          content: '';
-          position: absolute;
-          width: 12px;
-          height: 2px;
-          background-color: #701317;
-          top: 8px;
-          left: 4px;
-          border-radius: 5px;
-      }
-
       /* Estilos del chat */
       #chat-box {
           position: absolute;
@@ -94,6 +75,7 @@
           border: none;
           font-size: 16px;
           cursor: pointer;
+          color: white;
       }
 
       /* Área de conversación */
@@ -111,27 +93,14 @@
           gap: 5px;
       }
 
+      /* Campo de entrada corregido */
       #user-input {
           flex: 1;
           padding: 8px;
           border: 1px solid #ccc;
           border-radius: 5px;
-      }
-
-      /* Estilos de los botones */
-      .button-option {
-          padding: 10px;
-          background-color: #e0e0e0;
+          background-color: white;
           color: black;
-          border: none;
-          border-radius: 5px;
-          margin: 5px;
-          cursor: pointer;
-      }
-
-      /* Hover de los botones */
-      .button-option:hover {
-          background-color:rgb(203, 202, 202);
       }
 
       /* Estilos del botón de enviar */
@@ -144,7 +113,6 @@
           cursor: pointer;
       }
 
-      /* Hover del botón de enviar */
       #send-message:hover {
           background-color: #50100E;
       }
@@ -174,15 +142,16 @@
           text-align: left;
           align-self: flex-start;
       }
-    /* Estilo del mensaje de espera */
+
+      /* Estilo del mensaje de espera */
       .loading-message {
-          background-color: #e0e0e0; /* Similar al estilo del mensaje del bot */
+          background-color: #e0e0e0;
           color: gray;
           font-style: italic;
           text-align: center;
           padding: 10px;
           border-radius: 8px;
-          align-self: flex-start; /* Alineado como un mensaje del bot */
+          align-self: flex-start;
       }
   `;
   document.head.appendChild(style);
