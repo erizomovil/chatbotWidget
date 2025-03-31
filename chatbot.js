@@ -129,6 +129,11 @@
           cursor: pointer;
       }
 
+      #send-message:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+      }
+
       #send-message:hover {
           background-color: #50100E;
       }
@@ -203,6 +208,11 @@
 
   // Enviar mensaje al presionar "Enter"
   userInput.addEventListener('keypress', function(event) {
+      if (userInput.value.trim() === '') {
+          sendButton.disabled = true;
+      } else {
+          sendButton.disabled = false;
+      }
       if (event.key === 'Enter') {
           event.preventDefault();
           sendMessage();
