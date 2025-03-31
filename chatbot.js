@@ -12,7 +12,7 @@
       <div id="chat-box" style="display: none;">
           <div id="chat-header">
               <button id="close-chat">✖</button>
-              <button id="reset-chat">🔄</button>
+              <button id="reset-chat">↻</button>
           </div>
           <div id="chat-log"></div>
           <div id="button-container"></div>
@@ -287,6 +287,7 @@
       appendMessage(pdf, 'user-message');
       sendButtonSelectionToServer(pdf);
       disableButtons(); 
+      setInputDisabled(true);
   }
 
   // Desactivar los botones después de hacer una selección
@@ -368,7 +369,8 @@
         appendMessage('There was an error processing the request.', 'bot-message');
     })
     .finally(() => {
-        loadingMessage.remove();  // Eliminar el mensaje de carga una vez completado
+        loadingMessage.remove();// Eliminar el mensaje de carga una vez completado
+        setInputDisabled(false);
     });
   }
 })();
