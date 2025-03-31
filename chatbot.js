@@ -5,11 +5,15 @@
   chatWidget.innerHTML = `
       <!-- Ícono de mensaje -->
       <div id="chat-icon" title="Abrir chat">
-          <div id="chat-icon-inner"></div>
+          <div id="chat-icon-inner">💬</div>
       </div>
       
       <!-- Contenedor del chat (inicialmente oculto) -->
       <div id="chat-box" style="display: none;">
+          <div id="chat-header">
+              <button id="close-chat">✖</button>
+              <button id="reset-chat">🔄</button>
+          </div>
           <div id="chat-log"></div>
           <div id="button-container"></div>
           <input type="text" id="user-input" placeholder="Escribe un mensaje..." disabled />
@@ -37,6 +41,8 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          color: white;
+          font-size: 20px;
       }
 
       /* Estilo del interior del ícono */
@@ -76,6 +82,19 @@
           color: black;
       }
 
+      #chat-header {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 10px;
+      }
+
+      #chat-header button {
+          background: none;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+      }
+
       /* Área de conversación */
       #chat-log {
           flex: 1;
@@ -84,6 +103,18 @@
           height: 300px;
           display: flex;
           flex-direction: column;
+      }
+
+      #input-container {
+          display: flex;
+          gap: 5px;
+      }
+
+      #user-input {
+          flex: 1;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
       }
 
       /* Estilos de los botones */
@@ -133,7 +164,7 @@
           background-color: #701317;
           text-align: right;
           align-self: flex-end;
-          color: black;
+          color: white;
       }
 
       /* Mensajes del servidor alineados a la izquierda con color grisáceo */
@@ -157,16 +188,26 @@
   document.body.appendChild(chatWidget);
 
   // Obtener los elementos del widget
-  const chatLog = document.getElementById('chat-log');
-  const userInput = document.getElementById('user-input');
-  const sendButton = document.getElementById('send-message');
   const chatBox = document.getElementById('chat-box');
   const chatIcon = document.getElementById('chat-icon');
+  const chatLog = document.getElementById('chat-log');
+  const closeChat = document.getElementById('close-chat');
+  const resetChat = document.getElementById('reset-chat');
+  const userInput = document.getElementById('user-input');
+  const sendButton = document.getElementById('send-message');
   const buttonContainer = document.getElementById('button-container');
 
   // Abrir y cerrar el chat al hacer clic en el ícono
   chatIcon.addEventListener('click', function() {
       chatBox.style.display = chatBox.style.display === 'none' ? 'flex' : 'none';
+  });
+
+  closeChat.addEventListener('click', () => {
+    chatBox.style.display = 'none';
+  });
+
+  resetChat.addEventListener('click', () => {
+    chatLog.innerHTML = '';
   });
 
   // Enviar mensaje al hacer clic en el botón de enviar
