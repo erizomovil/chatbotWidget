@@ -275,7 +275,7 @@
       loadingMessage.textContent = '...';
       chatLog.appendChild(loadingMessage);
       chatLog.scrollTop = chatLog.scrollHeight;
-      fetch('https://chatbot-server-e2lzxxydo-erizomovils-projects.vercel.app/chat', {
+      fetch('https://chatbot-server-navy.vercel.app/chat', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -300,7 +300,7 @@
     loadingMessage.textContent = '...';
     chatLog.appendChild(loadingMessage);
     chatLog.scrollTop = chatLog.scrollHeight;
-    fetch('https://chatbot-server-e2lzxxydo-erizomovils-projects.vercel.app/button-action', { 
+    fetch('https://chatbot-server-navy.vercel.app/button-action', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
