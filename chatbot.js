@@ -305,7 +305,8 @@
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ option: option })
+        body: JSON.stringify({ option: option }),
+        mode: "cors",
     })
     .then(response => response.json())
     .then(data => {
