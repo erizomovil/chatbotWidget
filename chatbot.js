@@ -309,6 +309,7 @@
           appendMessage(message, 'user-message');
           sendMessageToServer(message);
           userInput.value = '';
+          setInputDisabled(true);
       }
   }
 
@@ -336,7 +337,12 @@
       })
       .finally(() => {
           loadingMessage.remove();  // Eliminar el mensaje de carga una vez completado
+          setInputDisabled(false);
       });
+  }
+  function setInputDisabled(disabled) {
+    userInput.disabled = disabled;
+    sendButton.disabled = disabled;
   }
   function sendButtonSelectionToServer(option) {
     const loadingMessage = document.createElement('div');
