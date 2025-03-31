@@ -103,6 +103,22 @@
           color: black;
       }
 
+      /* Estilos de los botones */
+      .button-option {
+          padding: 10px;
+          background-color: #e0e0e0;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin: 5px;
+          cursor: pointer;
+      }
+
+      /* Hover de los botones */
+      .button-option:hover {
+          background-color:rgb(203, 202, 202);
+      }
+
       /* Estilos del botón de enviar */
       #send-message {
           padding: 10px;
