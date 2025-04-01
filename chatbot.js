@@ -259,6 +259,7 @@
           });
           buttonContainer.appendChild(button);
       });
+      console.log("Botones generados:", buttonContainer.innerHTML);
   }
 
   // Función cuando el usuario selecciona un botón
