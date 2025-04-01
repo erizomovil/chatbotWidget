@@ -249,7 +249,7 @@
   // Mostrar los botones
   function showButtons() {
       const options = ['Research Team', 'Net working', 'Latest News', 'About the page', 'Information', 'Contacts'];
-
+      buttonContainer.style.display = 'block';
       options.forEach(option => {
           const button = document.createElement('button');
           button.textContent = option;
