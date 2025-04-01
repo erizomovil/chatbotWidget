@@ -305,8 +305,8 @@
           button.disabled = true;
       });
       // Hacer que el campo de texto y el botón de enviar sean habilitados
-      userInput.disabled = false;
-      sendButton.disabled = false;
+      userInput.disabled = true;
+      sendButton.disabled = true;
       userInput.focus();
       buttonContainer.style.display = 'none'; // Ocultar los botones
   }
