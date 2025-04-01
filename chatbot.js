@@ -43,7 +43,7 @@
           justify-content: center;
           color: white;
           font-size: 20px;
-          z-index: 2147483647;
+          z-index: 21474836470000000000000000;
       }
 
       /* Estilos del chat */
@@ -62,7 +62,7 @@
           flex-direction: column;
           font-family: sans-serif;
           color: black;
-          z-index: 2147483647;
+          z-index: 21474836470000000000000000;
       }
 
       #chat-header {
