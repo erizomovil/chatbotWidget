@@ -43,6 +43,7 @@
           justify-content: center;
           color: white;
           font-size: 20px;
+          z-index: 2147483647;
       }
 
       /* Estilos del chat */
@@ -61,6 +62,7 @@
           flex-direction: column;
           font-family: sans-serif;
           color: black;
+          z-index: 2147483647;
       }
 
       #chat-header {
@@ -198,13 +200,23 @@
   });
 
   resetChat.addEventListener('click', () => {
-    chatLog.innerHTML = '';
+    chatLog.innerHTML = ''; // Limpiar el historial del chat
+    buttonContainer.innerHTML = ''; // Limpiar los botones
+    userInput.value = ''; // Limpiar el input del usuario
+    userInput.disabled = true; // Deshabilitar el input
+    sendButton.disabled = true; // Deshabilitar el botón de enviar
+    showInitialMessage(); // Volver a mostrar el mensaje inicial y los botones
   });
 
   // Enviar mensaje al hacer clic en el botón de enviar
   sendButton.addEventListener('click', function() {
       sendMessage();
   });
+
+  function showInitialMessage() {
+    appendMessage('Hello! I can help you with different things, to continue select one of the options.', 'bot-message');
+    showButtons();
+  }
 
   // Enviar mensaje al presionar "Enter"
   userInput.addEventListener('keypress', function(event) {
